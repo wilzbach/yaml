@@ -1,0 +1,20 @@
+commands:
+  _:
+    args:
+    - name: yaml
+      type: file
+      required: true
+      help: Path to yaml file to validate.
+    - name: schema
+      type: file
+      required: true
+      help: Path to schema to validate yaml against.
+    additional_args: false
+    additional_kwargs: false
+    results:
+      type: json
+      help: The validated yaml file in json format.
+
+volumes:
+  story:
+  repository:

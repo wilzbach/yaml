@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var app = require('../lib/app');
+
+var res = app.validate(
+  process.argv[1],
+  process.argv[2]
+);
+
+if (res.valid) {
+  process.stdout.write(res.yaml);
+  process.exit(0);
+
+} else {
+  process.stderr.write(res.errorsText);
+  process.exit(1);
+}
