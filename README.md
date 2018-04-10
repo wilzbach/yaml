@@ -1,5 +1,9 @@
-## Parse and validate yaml against a schema
+Yaml to json with optional validation schema.
 
-```
-json = validate-yaml `my.yaml`, `schema.json`
+```coffee
+# yaml to json
+json = yaml `my.yaml`
+
+# yaml to json w/ validation
+json = yaml `my.yaml`, `schema.json`
 ```

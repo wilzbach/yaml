@@ -1,5 +1,5 @@
 commands:
-  _:
+  entrypoint:
     args:
     - name: yaml
       type: file
@@ -14,7 +14,3 @@ commands:
     results:
       type: json
       help: The validated yaml file in json format.
-
-volumes:
-  story:
-  repository:
