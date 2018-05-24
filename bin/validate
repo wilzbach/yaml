@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-var app = require('../lib/app');
+app = require('../lib/app')
 
-var res = app.validate(
-  process.argv[1],
-  process.argv[2]
-);
+if (process.argv[2] == 'parse') {
+  res = app.parse(process.argv[3], process.argv[4])
 
-if (res.valid) {
-  process.stdout.write(res.yaml);
-  process.exit(0);
+  if (res.valid) {
+    process.stdout.write(res.yaml)
+    process.exit(0)
 
-} else {
-  process.stderr.write(res.errorsText);
-  process.exit(1);
+  } else {
+    process.stderr.write(res.errorsText)
+    process.exit(1)
+  }
+
 }
