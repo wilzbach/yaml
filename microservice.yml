@@ -2,10 +2,10 @@ commands:
   parse:
     format: parse {yaml} {schema}
     arguments:
-    - name: yaml
-      type: file
-      required: true
-      help: Path to yaml file to validate.
-    - name: schema
-      type: file
-      help: Path to schema to validate yaml against.
+      yaml:
+        type: file
+        required: true
+        help: Path to yaml file to validate.
+      schema:
+        type: file
+        help: Path to schema to validate yaml against.
