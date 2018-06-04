@@ -3,9 +3,9 @@ commands:
     format: parse {yaml} {schema}
     arguments:
       yaml:
-        type: file
+        type: string
         required: true
         help: Path to yaml file to validate.
       schema:
-        type: file
+        type: string
         help: Path to schema to validate yaml against.
