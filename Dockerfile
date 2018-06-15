@@ -1,7 +1,4 @@
 FROM          node:alpine
-
-RUN           npm install
-
 COPY          . .
-
+RUN           npm install
 ENTRYPOINT    ["./bin/validate"]

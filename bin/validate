@@ -3,7 +3,8 @@
 app = require('../lib/app')
 
 if (process.argv[2] == 'parse') {
-  res = app.parse(process.argv[3], process.argv[4])
+  args = JSON.parse(process.argv[3])
+  res = app.parse(args['yaml'], args['schema'])
 
   if (res.valid) {
     process.stdout.write(res.yaml)
