@@ -1,13 +1,31 @@
 omg: 1
+lifecycle:
+  startup:
+    command: ["ruby", "/app/app.rb"]
 actions:
-  parse:
+  format:
+    http:
+      path: /format
+      method: post
+      port: 8080
     arguments:
-      yaml:
+      data:
+        type: any
+        required: true
+        in: requestBody
+    output:
+      type: string
+      contentType: application/json
+  parse:
+    http:
+      path: /parse
+      method: post
+      port: 8080
+    arguments:
+      data:
         type: string
         required: true
-        help: Path to yaml file to validate.
-      schema:
-        type: file
-        help: Path to schema to validate yaml against.
+        in: requestBody
     output:
-      type: map
+      type: any
+      contentType: application/json
