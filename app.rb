@@ -6,6 +6,7 @@ require 'yaml'
 
 set :port, 8080
 set :bind, '0.0.0.0'
+set :show_exceptions, false
 
 before do
   content_type :json
@@ -24,4 +25,8 @@ end
 
 after do
   response.body = JSON.dump(response.body)
+end
+
+error do
+  {'message': env['sinatra.error'].message}
 end
