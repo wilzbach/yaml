@@ -14,7 +14,7 @@ end
 
 post '/format' do
   data = JSON.parse request.body.read
-  YAML.dump(data['data'])
+  YAML.dump(data['data'])[0]
 end
 
 
