@@ -19,4 +19,5 @@ jobs:
             echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
 
       - run: npm i omg
+      - run: npx omg build
       - run: npx omg exec parse -a data="- item"
