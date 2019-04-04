@@ -19,5 +19,10 @@ jobs:
             echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
 
       - run: npm i omg
+      - run: npx omg validate
       - run: npx omg build
-      - run: npx omg exec parse -a data="- item"
+      - run:
+          name: Test YAML output
+          command: |
+            output="$(npx omg run --raw parse -a data="- item")"
+            if [ "$output" != '["item"]' ] ; then echo "$output"; exit 1; fi
